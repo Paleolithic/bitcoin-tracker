@@ -1,0 +1,73 @@
+body{
+	margin: 0;
+	padding: 0;
+	background-color: #2C343B;
+	color: #FBFEFF;
+	font-family: 'Raleway', sans-serif;
+
+
+} 
+
+h1{
+	margin: 0;
+	padding: 7px;
+	font-size: 35px;
+	line-height: 42px;
+	width: auto;
+	font-weight: 300;
+}
+
+h3{
+	margin: 0;
+	padding: 7px;
+	font-size: 28px;
+	line-height: 35px;
+	font-weight: 300;
+}
+
+#header{
+	margin: 0;
+	padding: 0;
+	background-color: #C44741;
+}
+
+#middle{
+	width: 350px;
+	height: 100px;
+
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+
+	text-align: center;
+}
+	#middle h1{
+		font-size: 70px;
+		line-height: 77px;
+		text-shadow: 0px 5px #000000;
+	}
+
+		#middle h1:hover{
+			color: #CFCBBD;
+			cursor: pointer;
+		}
+
+	#middle h3{
+		color: #C44741;
+	}
+
+		#middle h3:hover{
+
+		}
+
+/** Base.css overrides
+	input{
+		width: 50% !important;
+		display: inline !important;
+	}
+
+	span{
+		display: block;
