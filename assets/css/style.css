@@ -63,7 +63,7 @@ h3{
 
 		}
 
-/** Base.css overrides
+/** Base.css overrides */
 	input{
 		width: 50% !important;
 		display: inline !important;
@@ -71,3 +71,7 @@ h3{
 
 	span{
 		display: block;
+		color: red;
+		width: 50%;
+		padding-left: 10%;
+	}

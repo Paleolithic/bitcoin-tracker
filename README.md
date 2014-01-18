@@ -15,3 +15,7 @@ Ver 0.1
 
 Field and general layout have been set up, and it pulls in and displays current bitcoin price from Coinbase only thus far
 
+Ver 0.2
+=======
+
+Basic functionality has been set up. You can put in bitcoin amount and it will calculate dollar value for that amount.

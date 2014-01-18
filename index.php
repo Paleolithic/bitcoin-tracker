@@ -6,21 +6,24 @@
 	<link href='http://fonts.googleapis.com/css?family=Raleway:100,200,300,400' rel='stylesheet' type='text/css'>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 	<script type='text/javascript'>
-		$(document).ready(function(){
 
-		});
-			function validate(){
-				console.log("Got here");
-				var amount = document.getElementById("form");
-				if(document.submitForm.amount.value == "" || document.submitForm.amount.value == "0.00 BTC")
-				{
-					var x = amount.appendChild(document.createElement("span"));
-					x.appendChild(document.createTextNode("* Required Field"));
-					return false;
-				}		
+		function validate(){
+			console.log("Got here");
+			$form = document.submitForm;
 
-				return true;			
+			if(document.submitForm.childNodes.length > 5){
+				document.submitForm.removeChild(document.submitForm.getElementsByTagName("span")[0]);
 			}
+
+			if(document.submitForm.amount.value == "" || document.submitForm.amount.value == "0.00 BTC")
+			{
+				var x = document.getElementById("form").appendChild(document.createElement("span"));
+				x.appendChild(document.createTextNode("* Required Field"));
+				return false;
+			}		
+
+			return true;			
+		}
 	</script>
 </head>
 <body>
@@ -33,9 +36,18 @@
 			$result = file_get_contents($url);
 			$decode = json_decode($result, true);
 			$amount = $decode['amount'];
-			echo '<h1 id="main">$' . ($amount) . '</h1>';
+			if (isset($_POST['amount'])){
+				$multiple = $_POST['amount'];
+				$amount = $amount*$multiple;
+				$amount = number_format((float)$amount, 2, '.', '');
+				echo '<h1 id="main">$' . ($amount) . '</h1>';
+			}
+			else{
+				echo '<h1 id="main">$' . ($amount) . '</h1>';
+			}
 		?>
-		<form name="submitForm" id='form' method="GET" onsubmit="return validate()">
+		
+		<form name="submitForm" id='form' method="POST" onsubmit="return validate()" action="index.php">
 			<input type="text" value='0.00 BTC' id='amount' name="amount" onblur="if (this.value == '') {this.value = '0.00 BTC';}" onfocus="if (this.value == '0.00 BTC') {this.value = '';}">
  			<button type="submit" name="check">Check</button>
  		</form>
