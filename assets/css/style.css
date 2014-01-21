@@ -64,14 +64,33 @@ h3{
 		}
 
 /** Base.css overrides */
-	input{
+	input[type=text]{
 		width: 50% !important;
 		display: inline !important;
 	}
 
-	span{
+	input[type=radio]{
+		display: none !important;
+		margin: 10px;
+	}
+
+	input[type=radio] + label{
+		display: inline-block;
+		margin: -2px;
+		padding: 4px 12px;
+		
+		border: 1px solid black;
+	}	
+
+	input[type=radio]:checked + label{
+		background-image: none;
+		background-color: #C44741;
+	}
+
+	#middle span{
 		display: block;
 		color: red;
 		width: 50%;
 		padding-left: 10%;
 	}
+	

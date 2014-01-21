@@ -19,3 +19,9 @@ Ver 0.2
 =======
 
 Basic functionality has been set up. You can put in bitcoin amount and it will calculate dollar value for that amount.
+
+Ver 0.3
+=======
+
+Can get sell price from either Coinbase or MtGox now
+Set up Ajax calls, will change price amount based on radio button selection for bitcoin trade site.
